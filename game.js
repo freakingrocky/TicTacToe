@@ -10,6 +10,8 @@ const cells = document.querySelectorAll('.cell')
 startGame();
 
 function reset() {
+    document.querySelector(".status").innerText = "The Unbeatable Tic-Tac-Toe AI";
+    document.querySelector(".status").animation = "";
     for (var i = 0; i < cells.length; i++) {
         cells[i].innerText = '';
         cells[i].addEventListener('click', turnClick, false);
@@ -18,7 +20,6 @@ function reset() {
 }
 
 function startGame() {
-    document.querySelector('.endGame').style.display = "none";
     Board = Array.from(Array(9).keys());
     reset();
 }
@@ -28,9 +29,9 @@ function emptySquares() {
 }
 
 function popUpWinner(str) {
-    document.querySelector(".endGame").style.display = "block";
-    document.querySelector(".endGame").style.backgroundColor = str == "That's a tie!" ? "#99127a" : "red";
-    document.querySelector(".endGame .text").innerText = str;
+    document.querySelector(".status").innerText = str;
+    document.querySelector(".status").animation = "glowAlt 1s ease -in -out infinite alternate";
+
 }
 
 function checkTie(available) {

@@ -143,3 +143,12 @@ button:hover{
     text-shadow:  0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ffffff, 0 0 60px #ff4da6, 0 0 70px #ffffff, 0 0 80px #ff4da6;
     }
 }
+
+@keyframes glowAlt {
+    from {
+    text-shadow:  0 0 10px rgb(204, 191, 135), 0 0 20px #888F90, 0 0 30px #1f0311, 0 0 140px #afd119, 0 0 150px #d0ff00, 0 0 160px #160a10, 0 0 170px #9c0505;
+    }
+    to {
+    text-shadow:  0 0 20px rgb(238, 129, 129), 0 0 30px #79810d, 0 0 40px #c3ff00, 0 0 150px #ffffff, 0 0 160px #d1c519, 0 0 170px #fff200, 0 0 180px #b5db1a;
+    }
+}
