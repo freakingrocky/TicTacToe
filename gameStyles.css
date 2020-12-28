@@ -1,0 +1,145 @@
+td {
+    border: 2px solid rgba(0, 0, 0, 0.849);
+    border-style: ridge;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 135px;
+    cursor:url(http://www.rw-designer.com/cursor-view/119479.png), auto;
+    background-color: #2a0a100a;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    color: rgb(209, 197, 25);
+    text-shadow: 0 0 10px rgb(172, 187, 36), 0 0 20px rgb(224, 120, 120), 0 0 30px #95476e, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #dd1818;
+    cursor:url(https://cdn.custom-cursor.com/db/cursor/32/Magic_Wand.png), auto;
+}
+
+.text {
+    cursor:url(https://cdn.custom-cursor.com/db/cursor/32/Magic_Wand.png), auto;
+}
+
+p {
+    text-align: center;
+    font-family: 'Brush Script MT', cursive;
+    color: rgb(27, 26, 14);
+    font-size: 20px;
+
+}
+
+.link:hover {
+    color: white;
+    cursor:url(https://cdn.custom-cursor.com/db/4731/32/arrow2699.png), pointer;
+}
+
+a {
+    color:rgb(209, 197, 25, 0.0);
+}
+
+a:hover {
+    color: rgba(59, 52, 52, 0.411);
+    cursor:url(https://cdn.custom-cursor.com/db/4731/32/arrow2699.png), pointer;
+}
+
+a:visited {
+    color: white;
+}
+
+td:hover {
+    background-color: rgba(36, 134, 27, 0.5);
+    animation: glow 1s ease-in-out infinite alternate;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    box-shadow:
+        inset 0 0 60px whitesmoke,
+        inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff,
+        inset 20px 0 300px #f0f,
+        inset -20px 0 300px #0ff,
+        0 0 50px #fff,
+        -10px 0 80px #f0f,
+        10px 0 80px #0ff;
+}
+
+table {
+    border-collapse: collapse;
+    position: relative;
+    left: 50%;
+    margin-left: -310px;
+    top: 50px;
+    color:rgb(0, 0, 0);
+    background-blend-mode: color-burn;
+    background-color: #b17304;
+    box-shadow: 0 0 10px #cc130c, 0 0 20px #cc130c, 0 0 30px #cc130c, 0 0 40px #cc130c, 0 0 50px #cc130c, 0 0 60px #cc130c, 0 0 70px #d67200;
+    padding-bottom: 310px;
+}
+
+table tr:first-child td {
+    border-top: none;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+table tr td:last-child {
+    border-right: none;
+}
+
+table tr td:first-child {
+    border-left: none;
+}
+
+button {
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 8px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+button:hover{
+    cursor:url(https://cdn.custom-cursor.com/db/4731/32/arrow2699.png), auto;
+    box-shadow:
+        inset 0 0 60px rgb(31, 27, 4),
+        inset 20px 0 80px #f0f,
+        inset -20px 0 80px #0ff,
+        inset 20px 0 25px #f0f,
+        inset -20px 0 25px #0ff,
+        -10px 0 80px rgba(255, 0, 255, 0.212),
+        10px 0 80px #0ff;
+}
+
+.endGame {
+  display: none;
+  width: 350px;
+  top: 120px;
+  background-color: rgba(51, 28, 255, 0.815);
+  position: absolute;
+  left: 50%;
+  margin-left: -175px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-size: 2em;
+}
+
+
+@keyframes glow {
+    from {
+    text-shadow:  0 0 10px #fff, 0 0 20px #fff, 0 0 30px #1f0311, 0 0    40px #e60073, 0 0 50px #e60073, 0 0 60px #160a10, 0 0 70px #e60073;
+    }
+    to {
+    text-shadow:  0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ffffff, 0 0 60px #ff4da6, 0 0 70px #ffffff, 0 0 80px #ff4da6;
+    }
+}
