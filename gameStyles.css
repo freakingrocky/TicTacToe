@@ -7,7 +7,7 @@ td {
     vertical-align: middle;
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 135px;
-    cursor:url(http://www.rw-designer.com/cursor-view/119479.png), auto;
+    cursor:url(./assets/cross.png), auto;
     background-color: #2a0a100a;
 }
 
@@ -16,11 +16,11 @@ h1 {
     font-family: 'Brush Script MT', cursive;
     color: rgb(209, 197, 25);
     text-shadow: 0 0 10px rgb(172, 187, 36), 0 0 20px rgb(224, 120, 120), 0 0 30px #95476e, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #dd1818;
-    cursor:url(https://cdn.custom-cursor.com/db/cursor/32/Magic_Wand.png), auto;
+    cursor:url(./assets/wand.png), auto;
 }
 
 .text {
-    cursor:url(https://cdn.custom-cursor.com/db/cursor/32/Magic_Wand.png), auto;
+    cursor:url(./assets/wand.png), auto;
 }
 
 p {
@@ -33,7 +33,7 @@ p {
 
 .link:hover {
     color: white;
-    cursor:url(https://cdn.custom-cursor.com/db/4731/32/arrow2699.png), pointer;
+    cursor:url(./assets/pointer.png), pointer;
 }
 
 a {
@@ -42,7 +42,7 @@ a {
 
 a:hover {
     color: rgba(59, 52, 52, 0.411);
-    cursor:url(https://cdn.custom-cursor.com/db/4731/32/arrow2699.png), pointer;
+    cursor:url(./assets/pointer.png), pointer;
 }
 
 a:visited {
@@ -107,7 +107,7 @@ button {
 }
 
 button:hover{
-    cursor:url(https://cdn.custom-cursor.com/db/4731/32/arrow2699.png), auto;
+    cursor:url(./assets/pointer.png), auto;
     box-shadow:
         inset 0 0 60px rgb(31, 27, 4),
         inset 20px 0 80px #f0f,

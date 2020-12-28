@@ -1,4 +1,4 @@
-var Board;
+let Board;
 const huPlayer = "X";
 const AIPlayer = "O";
 const winCombos = [
@@ -24,7 +24,7 @@ function startGame() {
 }
 
 function emptySquares() {
-    return Board.filter(s => typeof s == 'number')
+    return Board.filter((elm, i) => i===elm)
 }
 
 function popUpWinner(str) {
@@ -48,7 +48,8 @@ function checkTie(available) {
 function turnClick(square) {
     if (typeof Board[square.target.id] == 'number') {
         turn(square.target.id, huPlayer)
-        if (!checkTie(emptySquares()) && !terminal(Board, huPlayer)) turn(minimax(), AIPlayer);
+        if (!checkTie(emptySquares()) && !terminal(Board, huPlayer))
+            turn(minimax(), AIPlayer);
     }
 }
 
@@ -58,7 +59,7 @@ function terminal(board, player) {
     let terminalState = null;
     for (let [index, win] of winCombos.entries()) {
         if (win.every(elem => plays.indexOf(elem) > -1)) {
-            terminalState = { index: index, player: player };
+            terminalState = {index: index, player: player};
             break;
         }
     }
@@ -70,27 +71,27 @@ function gameOver(terminalState) {
         document.getElementById(index).style.backgroundColor =
             terminalState.player == huPlayer ? "green" : "red";
     }
-    for (var i = 0; i < cells.length; i++) {
+    for (let i = 0; i < cells.length; i++) {
         cells[i].removeEventListener('click', turnClick, false);
     }
-    popUpWinner(terminalState.player == huPlayer ? "It's Impossible! You're a hacker!" : "AI Wins!!!");
+    popUpWinner(terminalState.player === huPlayer ? "It's Impossible! You're a hacker!" : "AI Wins!!!");
 }
 
 function turn(squareId, player) {
     Board[squareId] = player;
-    console.log(squareId)
     document.getElementById(squareId).innerText = player;
-    let terminalState = terminal(Board, player)
-    if (terminalState) gameOver(terminalState)
+    let terminalState = terminal(Board, player);
+    if (terminalState) gameOver(terminalState);
+    checkTie(emptySquares());
 }
 
 // AI
 function minimax() {
-    return minimaxAlgorithm(Board, AIPlayer);
+    return minimaxAlgorithm(Board, AIPlayer).index;
 }
 
 function minimaxAlgorithm(newBoard, player) {
-    var available = emptySquares();
+    var available = emptySquares(newBoard);
 
     if (terminal(newBoard, huPlayer)) {
         return {score: -1};
@@ -103,42 +104,39 @@ function minimaxAlgorithm(newBoard, player) {
     }
 
     var moves = [];
-    for (var i = 0; i < available.length; i++) {
+    for (let i = 0; i < available.length; i++) {
         var move = {};
-        move.index == newBoard[available[i]];
+        move.index = newBoard[available[i]];
         newBoard[available[i]] = player;
 
-        if (player == AIPlayer) {
-            var result = minimaxAlgorithm(newBoard, huPlayer);
-            move.score = result.score;
+        if (player === AIPlayer) {
+            move.score = minimaxAlgorithm(newBoard, huPlayer).score;
         } else {
-            var result = minimaxAlgorithm(newBoard, AIPlayer);
-            move.score = result.score;
+            move.score = minimaxAlgorithm(newBoard, AIPlayer).score;
         }
-
         newBoard[available[i]] = move.index;
-
-        moves.push(move);
+        if ((player === AIPlayer && move.score === 1) || (player === huPlayer && move.score === -1))
+            return move;
+        else
+            moves.push(move);
     }
-    var bestMove;
+    let bestMove, bestScore;
     if (player === AIPlayer) {
-        var bestScore = -100;
-        for (var i = 0; i < moves.length; i++) {
+        bestScore = -1000;
+        for (let i = 0; i < moves.length; i++) {
             if (moves[i].score > bestScore) {
                 bestScore = moves[i].score;
                 bestMove = i;
             }
         }
     } else {
-        var bestScore = 100;
-        for (var i = 0; i < moves.length; i++) {
+        bestScore = 1000;
+        for (let i = 0; i < moves.length; i++) {
             if (moves[i].score < bestScore) {
                 bestScore = moves[i].score;
                 bestMove = i;
             }
         }
     }
-
-    console.log(bestMove)
-    return bestMove;
+    return moves[bestMove];
 }
