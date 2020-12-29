@@ -1,7 +1,7 @@
-# [<center>Unbeatable Tic-Tac-Toe AI (MiniMax Algorithm)</center>](https://freakingrocky.github.io/tictactoe)
+# [<center>Unbeatable Tic-Tac-Toe AI (MiniMax Algorithm)</center>](https://freakingrocky.github.io/TicTacToe)
 [<center>***Click Here to Play***\
 <img src="./assets/demo.gif" height=750/></center>
-](https://freakingrocky.github.io/tictactoe)
+](https://freakingrocky.github.io/TicTacToe)
 
 ## How?
 The algorithm's goal is to maximize the player score and minimize the opponent's score.\
